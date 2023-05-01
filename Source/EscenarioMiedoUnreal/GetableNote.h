@@ -14,8 +14,17 @@ class ESCENARIOMIEDOUNREAL_API AGetableNote : public AGetable
 {
 	GENERATED_BODY()
 
+
 public:
 
 	virtual void GetableGot() override;
+
+protected:
+
+	UPROPERTY(EditAnywhere, Category="Note Specification", meta = (AllowPrivateAccess = "true"))
+	FText NoteText;
+	UPROPERTY(EditAnywhere, Category="Note Specification", meta = (AllowPrivateAccess = "true"))
+	class ABaseTerrorConfiguration* SpecificTerrorConfig;
+
 	
 };

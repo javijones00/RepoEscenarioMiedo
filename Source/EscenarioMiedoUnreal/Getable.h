@@ -17,6 +17,8 @@ public:
 
 	virtual void GetableGot();
 
+	virtual void ShowPress(bool press);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -24,6 +26,9 @@ protected:
 	class UBoxComponent* BoxComponent;
 	UPROPERTY(EditDefaultsOnly, Category="Componentes", meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* GetableMesh;
+
+	UPROPERTY(EditAnywhere, Category="UIManager", meta = (AllowPrivateAccess = "true"))
+	class AUIManager* UIManager;
 
 public:	
 	// Called every frame

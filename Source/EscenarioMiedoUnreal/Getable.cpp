@@ -4,6 +4,7 @@
 #include "Getable.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
+#include "UIManager.h"
 
 // Sets default values
 AGetable::AGetable()
@@ -35,8 +36,13 @@ void AGetable::Tick(float DeltaTime)
 
 void AGetable::GetableGot()
 {
-	UE_LOG(LogTemp,Warning,TEXT("AGETABLE GETADO POR EL GETEBLEADOR"));
-	// this->Destroy();
+	ShowPress(false);
+	Destroy();
 }
-
-
+void AGetable::ShowPress(bool press)
+{
+	if(UIManager)
+	{
+		UIManager->ShowPress(press);
+	}
+}

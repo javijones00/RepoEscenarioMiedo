@@ -2,9 +2,19 @@
 
 
 #include "GetableNote.h"
+#include "UIManager.h"
+#include "BaseTerrorConfiguration.h"
 
 void AGetableNote::GetableGot()
 {
-	UE_LOG(LogTemp,Warning,TEXT("SOY UNA NOTA"));
+    if(UIManager)
+    {
+        UIManager->CreateNoteUI(NoteText);
+    }
+    if(SpecificTerrorConfig)
+    {
+        SpecificTerrorConfig->PerformChanges();
+    }
+	
     Super::GetableGot();
 }
