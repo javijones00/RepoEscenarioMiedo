@@ -34,10 +34,14 @@ void URaycastAgent::TickComponent(float DeltaTime, ELevelTick TickType, FActorCo
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	if(GetAvailableGetable())
 	{
-		UE_LOG(LogTemp,Warning,TEXT("Getable disponible"));
+		CurrentGetable->ShowPress(true);
 	}
 	else
 	{
+		if(CurrentGetable)
+		{
+			CurrentGetable->ShowPress(false);
+		}
 		CurrentGetable = nullptr;
 	}
 
