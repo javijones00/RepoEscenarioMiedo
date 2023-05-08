@@ -10,15 +10,17 @@
 #include "Components/CanvasPanelSlot.h"
 #include "Blueprint/WidgetTree.h"
 #include "UIManager.h"
+#include "BaseTerrorConfiguration.h"
 
 
 
-void UNoteWidget::SetNoteText(FText NoteText)
+void UNoteWidget::ConfigureNote(FText NoteText,ABaseTerrorConfiguration* TargetTerror)
 {
     if(NoteTextBlock)
     {
         NoteTextBlock->SetText(NoteText);
     }
+    CurrentTerror = TargetTerror;
     
 }
 void UNoteWidget::SetUIManager(AUIManager* CurrentUIManager)
@@ -29,4 +31,10 @@ void UNoteWidget::SetUIManager(AUIManager* CurrentUIManager)
 AUIManager* UNoteWidget::GetUIManager()
 {
   return UIManager;
+}
+
+ 
+ABaseTerrorConfiguration*  UNoteWidget::GetCurrentTerror()
+{
+    return CurrentTerror;
 }

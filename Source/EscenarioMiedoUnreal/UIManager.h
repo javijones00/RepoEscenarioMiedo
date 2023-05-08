@@ -31,10 +31,10 @@ protected:
 
 public:
 
-	void CreateNoteUI(FText noteText);
+	void CreateNoteUI(FText noteText,  class ABaseTerrorConfiguration* CurrentTerror);
 
 	void ShowPress(bool value);
-	
+
 	UFUNCTION(BlueprintCallable)
 	void EnableCursor(bool value);
 	

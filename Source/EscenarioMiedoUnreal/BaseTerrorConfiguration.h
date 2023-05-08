@@ -23,6 +23,7 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintCallable)
 	virtual void PerformChanges();
 
 	virtual void Config();

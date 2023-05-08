@@ -9,14 +9,12 @@ void AGetableNote::GetableGot()
 {
     if(UIManager)
     {
-        APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
-        PlayerController->GetPawn()->DisableInput(PlayerController);
-        UIManager->CreateNoteUI(NoteText);
+        UIManager->CreateNoteUI(NoteText, SpecificTerrorConfig);
     }
-    if(SpecificTerrorConfig)
-    {
-        SpecificTerrorConfig->PerformChanges();
-    }
+    // if(SpecificTerrorConfig)
+    // {
+    //     SpecificTerrorConfig->PerformChanges();
+    // }
 	
     Super::GetableGot();
 }

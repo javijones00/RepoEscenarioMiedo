@@ -25,12 +25,17 @@ protected:
 	class AUIManager* UIManager;
 
 	class UPanelWidget* RootPanel;
+	//UPROPERTY(BlueprintReadOnly, Category="Terror Configuration", meta = (AllowPrivateAccess = "true"))
+	class ABaseTerrorConfiguration* CurrentTerror;
 
 public:
 
-	void SetNoteText(FText NoteText);
+	void ConfigureNote(FText NoteText, class ABaseTerrorConfiguration* TargetTerror);
 	
 	void SetUIManager(class AUIManager* CurrentUIManager);
+	
+	UFUNCTION(BlueprintCallable)
+	class ABaseTerrorConfiguration* GetCurrentTerror();
 
 	UFUNCTION(BlueprintCallable)
 	class AUIManager* GetUIManager();

@@ -4,6 +4,7 @@
 #include "UIManager.h"
 #include "NoteWidget.h"
 #include "Blueprint/UserWidget.h"
+#include "BaseTerrorConfiguration.h"
 
 void AUIManager::BeginPlay()
 {
@@ -20,11 +21,11 @@ void AUIManager::BeginPlay()
 
 }
 
-void  AUIManager::CreateNoteUI(FText noteText)
+void  AUIManager::CreateNoteUI(FText noteText, ABaseTerrorConfiguration* CurrentTerror)
 {
     if(CurrentNoteWidget)
     {
-        CurrentNoteWidget->SetNoteText(noteText);
+        CurrentNoteWidget->ConfigureNote(noteText,CurrentTerror);
         CurrentNoteWidget->SetVisibility(ESlateVisibility::Visible);
         EnableCursor(true);
     }
