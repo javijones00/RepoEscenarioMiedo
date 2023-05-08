@@ -9,6 +9,8 @@ void AGetableNote::GetableGot()
 {
     if(UIManager)
     {
+        APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
+        PlayerController->GetPawn()->DisableInput(PlayerController);
         UIManager->CreateNoteUI(NoteText);
     }
     if(SpecificTerrorConfig)

@@ -24,6 +24,7 @@ protected:
 
 	class UNoteWidget* CurrentNoteWidget;
 	class UUserWidget* CurrentPressWidget;
+	class APlayerController* CurrentPC;
 
 	virtual void BeginPlay() override;
 
@@ -33,5 +34,8 @@ public:
 	void CreateNoteUI(FText noteText);
 
 	void ShowPress(bool value);
+	
+	UFUNCTION(BlueprintCallable)
+	void EnableCursor(bool value);
 	
 };

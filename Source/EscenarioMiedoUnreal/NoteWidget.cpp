@@ -9,6 +9,7 @@
 #include "Components/PanelWidget.h"
 #include "Components/CanvasPanelSlot.h"
 #include "Blueprint/WidgetTree.h"
+#include "UIManager.h"
 
 
 
@@ -19,4 +20,13 @@ void UNoteWidget::SetNoteText(FText NoteText)
         NoteTextBlock->SetText(NoteText);
     }
     
+}
+void UNoteWidget::SetUIManager(AUIManager* CurrentUIManager)
+{
+    UIManager = CurrentUIManager;
+}
+
+AUIManager* UNoteWidget::GetUIManager()
+{
+  return UIManager;
 }

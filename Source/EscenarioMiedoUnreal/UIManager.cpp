@@ -8,9 +8,11 @@
 void AUIManager::BeginPlay()
 {
 	Super::BeginPlay();
+    CurrentPC = GetWorld()->GetFirstPlayerController();
     CurrentNoteWidget = CreateWidget<UNoteWidget>(GetWorld(),MyNoteWidget,TEXT("NoteUI"));
 	CurrentNoteWidget->AddToViewport();
 	CurrentNoteWidget->SetVisibility(ESlateVisibility::Hidden);
+    CurrentNoteWidget->SetUIManager(this);
 
     CurrentPressWidget = CreateWidget<UUserWidget>(GetWorld(),PressWidget,TEXT("Press"));
 	CurrentPressWidget->AddToViewport();
@@ -24,6 +26,7 @@ void  AUIManager::CreateNoteUI(FText noteText)
     {
         CurrentNoteWidget->SetNoteText(noteText);
         CurrentNoteWidget->SetVisibility(ESlateVisibility::Visible);
+        EnableCursor(true);
     }
     
 }
@@ -43,4 +46,24 @@ void  AUIManager::ShowPress(bool press)
        
     }
     
+}
+
+void  AUIManager::EnableCursor(bool value)
+{
+    if(CurrentPC)
+    {
+        CurrentPC->bShowMouseCursor = value;
+        CurrentPC->bEnableClickEvents = value; 
+        CurrentPC->bEnableMouseOverEvents = value;
+        if(value)
+        {
+            CurrentPC->GetPawn()->DisableInput(CurrentPC);
+        }
+        else
+        {
+            CurrentPC->GetPawn()->EnableInput(CurrentPC);
+        }
+    
+    }
+   
 }

@@ -21,11 +21,17 @@ protected:
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="Widgets", meta = (AllowPrivateAccess = "true"))
 	class UTextBlock* NoteTextBlock;
-
+	UPROPERTY(BlueprintReadOnly, Category="Widgets", meta = (AllowPrivateAccess = "true"))
+	class AUIManager* UIManager;
 
 	class UPanelWidget* RootPanel;
 
 public:
 
 	void SetNoteText(FText NoteText);
+	
+	void SetUIManager(class AUIManager* CurrentUIManager);
+
+	UFUNCTION(BlueprintCallable)
+	class AUIManager* GetUIManager();
 };
