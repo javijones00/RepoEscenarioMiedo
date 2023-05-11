@@ -2,6 +2,20 @@
 
 
 #include "IluminationTerrorConfiguration.h"
-#include "Components/LightComponent.h"
+#include "Engine/Light.h"
 
 
+
+ void AIluminationTerrorConfiguration::PerformChanges()
+{
+    for(int i = 0; i<NewSceneLights.Num();i++)
+    {
+        NewSceneLights[i]->SetActorHiddenInGame(false);
+    }
+     for(int i = 0; i<OldSceneLights.Num();i++)
+    {
+        OldSceneLights[i]->SetActorHiddenInGame(true);
+    }
+
+    
+}
