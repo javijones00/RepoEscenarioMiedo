@@ -4,6 +4,7 @@
 #include "AudioTerrorConfiguration.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
+#include "Components/AudioComponent.h"
 
 void AAudioTerrorConfiguration::BeginPlay()
 {
@@ -13,6 +14,7 @@ void AAudioTerrorConfiguration::BeginPlay()
         SoundDictionary.Add(SceneSounds[i]->GetName(),SceneSounds[i]);
        
     }
+     NextTimeSound = FMath::RandRange(MinTimeSound, MaxTimeSound);
 }
 
 void AAudioTerrorConfiguration::Tick(float DeltaTime)
@@ -23,10 +25,11 @@ void AAudioTerrorConfiguration::Tick(float DeltaTime)
         CurrentTimeSound += DeltaTime;
         if(CurrentTimeSound >= NextTimeSound)
         {
-            FString soundToPlay = RandomSounds[FMath::RandRange(0,RandomSounds.Num())];
-            FVector location = RandomTargetLocations[FMath::RandRange(0,RandomTargetLocations.Num())]->GetActorLocation();
+            FString soundToPlay = RandomSounds[FMath::RandRange(0,RandomSounds.Num()-1)];
+            FVector location = RandomTargetLocations[FMath::RandRange(0,RandomTargetLocations.Num()-1)]->GetActorLocation();
             PlaySound(soundToPlay,location);
             NextTimeSound = FMath::RandRange(MinTimeSound, MaxTimeSound);
+            CurrentTimeSound = 0;
         }
     }
 }
@@ -35,18 +38,50 @@ void AAudioTerrorConfiguration::PerformChanges()
 {
     IsActivated = true;
     UGameplayStatics::PlaySound2D(GetWorld(),AmbientMusic);
-      UE_LOG(LogTemp, Warning, TEXT("Performed audio"));
+    UE_LOG(LogTemp, Warning, TEXT("Performed audio"));
 }
 
 void AAudioTerrorConfiguration::PlaySound(FString SoundName,FVector Location)
 {
     if(IsActivated)
     {
-        USoundBase* soundRef =SoundDictionary.FindRef(SoundName);
+        USoundBase* soundRef = SoundDictionary.FindRef(SoundName);
         if(soundRef)
         {
             UGameplayStatics::PlaySoundAtLocation(GetWorld(),soundRef,Location);
         }
     }
 }
-
+ void AAudioTerrorConfiguration::PlaySpawnedSound(FString SoundName, UAudioComponent* AudioComponent)
+ {
+    if(IsActivated)
+    {
+        USoundBase* soundRef = SoundDictionary.FindRef(SoundName);
+        if(soundRef != nullptr)
+        {
+            if(AudioComponent)
+            {
+                if(!AudioComponent->Sound.GetName().Equals(SoundName))
+                {
+                    AudioComponent->Sound = soundRef;
+                }
+                if(!AudioComponent->IsActive())
+                {
+                    AudioComponent->SetActive(true);
+                }
+            }
+            
+           
+        }
+    }
+ }
+void  AAudioTerrorConfiguration::StopSpawnedSound( UAudioComponent* AudioComponent)
+{
+    if(IsActivated)
+    {
+        if(AudioComponent)
+        {
+            AudioComponent->SetActive(false);
+        }
+    }
+}

@@ -27,11 +27,10 @@ private:
 	TArray<AActor*> RandomTargetLocations;
 
     TMap<FString,USoundBase*> SoundDictionary;
-
 	float CurrentTimeSound;
 	float NextTimeSound;
-	const float MaxTimeSound = 30;
-	const float MinTimeSound = 200; 
+	const float MaxTimeSound = 2;
+	const float MinTimeSound = 10; 
 
 	TArray<FString> RandomSounds = {"brokenBottle", "childWhispers", "ghostWhispers", "knockingAtDoor","oldTV", "screamingGhost"};
 
@@ -44,6 +43,12 @@ protected:
 public:
 
 	void PlaySound(FString SoundName, FVector location);
+
+	UFUNCTION(BlueprintCallable)
+	void PlaySpawnedSound(FString SoundName, UAudioComponent* AudioComponent);
+
+	UFUNCTION(BlueprintCallable)
+	void StopSpawnedSound( UAudioComponent* AudioComponent);
 
 	virtual void Tick(float DeltaTime) override;
 
