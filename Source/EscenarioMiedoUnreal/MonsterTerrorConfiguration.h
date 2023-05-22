@@ -22,10 +22,14 @@ private:
 
 	FTimerHandle ChasingHandle;
 
-
-
 	void StartChasingInvoked();
+
 
 protected:
 	virtual void PerformChanges() override;
+
+public:
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void MonsterActivated();
 };

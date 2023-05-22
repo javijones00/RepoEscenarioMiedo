@@ -12,14 +12,22 @@ void AMonsterTerrorConfiguration::PerformChanges()
 {
     MonsterReference->SetActorHiddenInGame(false);
     GetWorld()->GetTimerManager().SetTimer(ChasingHandle,this,&AMonsterTerrorConfiguration::StartChasingInvoked,TimeUntilChasing,false);
+    MonsterActivated();
 }
+
+
+
+
 void AMonsterTerrorConfiguration::StartChasingInvoked()
 {
-    UBlackboardComponent* BlackBoardRef =MonsterReference->FindComponentByClass<UBlackboardComponent>();
+    UBlackboardComponent* BlackBoardRef = UAIBlueprintHelperLibrary::GetBlackboard(MonsterReference);
+    
     if(BlackBoardRef)
     {
         BlackBoardRef->SetValueAsBool(FName("IsChasingMode"),true);
+        UE_LOG(LogTemp, Warning, TEXT("Buleria Buleria"));   
     }
+   
     
     
 }
