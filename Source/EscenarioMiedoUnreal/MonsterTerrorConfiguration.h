@@ -32,4 +32,6 @@ public:
 	
 	UFUNCTION(BlueprintImplementableEvent)
 	void MonsterActivated();
+	UFUNCTION(BlueprintImplementableEvent)
+	void MonsterChasing();
 };

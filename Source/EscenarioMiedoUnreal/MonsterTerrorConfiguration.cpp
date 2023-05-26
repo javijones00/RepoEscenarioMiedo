@@ -26,6 +26,7 @@ void AMonsterTerrorConfiguration::StartChasingInvoked()
     {
         BlackBoardRef->SetValueAsBool(FName("IsChasingMode"),true);
         UE_LOG(LogTemp, Warning, TEXT("Buleria Buleria"));   
+        MonsterChasing();
     }
    
     

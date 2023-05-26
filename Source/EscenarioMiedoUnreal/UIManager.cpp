@@ -5,11 +5,17 @@
 #include "NoteWidget.h"
 #include "Blueprint/UserWidget.h"
 #include "BaseTerrorConfiguration.h"
+#include "NewNoteWidget.h"
 
 void AUIManager::BeginPlay()
 {
 	Super::BeginPlay();
     CurrentPC = GetWorld()->GetFirstPlayerController();
+
+    CurrentNewNoteWidget = CreateWidget<UNewNoteWidget>(GetWorld(),NewNoteWidget,TEXT("NewNoteUI"));
+	CurrentNewNoteWidget->AddToViewport();
+	CurrentNewNoteWidget->SetVisibility(ESlateVisibility::Hidden);
+
     CurrentNoteWidget = CreateWidget<UNoteWidget>(GetWorld(),MyNoteWidget,TEXT("NoteUI"));
 	CurrentNoteWidget->AddToViewport();
 	CurrentNoteWidget->SetVisibility(ESlateVisibility::Hidden);
@@ -67,4 +73,15 @@ void  AUIManager::EnableCursor(bool value)
     
     }
    
+}
+
+void AUIManager::NewNote()
+{
+     CurrentNewNoteWidget->SetVisibility(ESlateVisibility::Visible);
+     CurrentNewNoteWidget->NewNoteCreated();
+     GetWorld()->GetTimerManager().SetTimer(NewNoteHandle,this,&AUIManager::HideNewNote,6,false);
+}
+void AUIManager::HideNewNote()
+{
+    CurrentNewNoteWidget->SetVisibility(ESlateVisibility::Hidden);
 }
