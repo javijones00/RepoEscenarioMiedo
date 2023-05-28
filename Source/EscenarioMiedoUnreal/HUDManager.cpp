@@ -33,10 +33,11 @@ void AHUDManager::BeginPlay()
 	CurrentPressWidget->SetVisibility(ESlateVisibility::Hidden);
 
     CurrentSandbox = CreateWidget<USandboxOptions>(GetWorld(),SandboxWidget,TEXT("SandboxOptions"));
-    // CurrentSandbox->AddToViewport();
-    // CurrentSandbox->SetVisibility(ESlateVisibility::Hidden); 
-    CurrentSandbox->SetConfigurations(AudioConfig,IlumConfig,PPConfig,VisibilityConfig,MonsterConfig);
+    CurrentSandbox->AddToViewport();
+	CurrentSandbox->SetVisibility(ESlateVisibility::Hidden);
 
+    CurrentSandbox->SetConfigurations(AudioConfig,IlumConfig,PPConfig,VisibilityConfig,MonsterConfig);
+    EndedBeginPlay();
     
 
 }
@@ -97,15 +98,19 @@ void AHUDManager::NewNote()
 }
 void AHUDManager::ShowSandBox(bool value)
 {
-
-	// CurrentSandbox->SetVisibility(value ? ESlateVisibility::Visible : ESlateVisibility::Hidden);  
-    if(value)
+	CurrentSandbox->SetVisibility(value ? ESlateVisibility::Visible : ESlateVisibility::Hidden);
+}
+void AHUDManager::ShowHideSandBox()
+{
+    if(CurrentSandbox->GetVisibility() == ESlateVisibility::Visible)
     {
-        CurrentSandbox->AddToViewport(2);
+        CurrentSandbox->SetVisibility(ESlateVisibility::Hidden);
+        EnableCursor(false);
     }
     else
     {
-        CurrentSandbox->RemoveFromParent();
+        CurrentSandbox->SetVisibility(ESlateVisibility::Visible);
+        EnableCursor(true);
     }
 }
 void AHUDManager::HideNewNote()

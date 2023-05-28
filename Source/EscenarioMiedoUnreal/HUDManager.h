@@ -40,6 +40,7 @@ protected:
 	class UNewNoteWidget* CurrentNewNoteWidget;
 	class UNoteWidget* CurrentNoteWidget;
 	class UUserWidget* CurrentPressWidget;
+	UPROPERTY(BlueprintReadOnly, Category="Widgets", meta = (AllowPrivateAccess = "true"))
 	class USandboxOptions* CurrentSandbox;
 	class APlayerController* CurrentPC;
 
@@ -57,10 +58,14 @@ public:
 	void NewNote();
 	UFUNCTION(BlueprintCallable)
 	void ShowSandBox(bool value);
+	UFUNCTION(BlueprintCallable)
+	void ShowHideSandBox();
 
 	void HideNewNote();
 
 	UFUNCTION(BlueprintCallable)
 	void EnableCursor(bool value);
+	UFUNCTION(BlueprintImplementableEvent)
+	void EndedBeginPlay();
 	
 };
