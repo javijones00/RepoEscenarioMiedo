@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
-#include "UIManager.generated.h"
+#include "HUDManager.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class ESCENARIOMIEDOUNREAL_API AUIManager : public AActor
+class ESCENARIOMIEDOUNREAL_API AHUDManager : public AActor
 {
 	GENERATED_BODY()
 

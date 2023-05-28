@@ -1,13 +1,13 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "UIManager.h"
+#include "HUDManager.h"
 #include "NoteWidget.h"
 #include "Blueprint/UserWidget.h"
 #include "BaseTerrorConfiguration.h"
 #include "NewNoteWidget.h"
 
-void AUIManager::BeginPlay()
+void AHUDManager::BeginPlay()
 {
 	Super::BeginPlay();
     CurrentPC = GetWorld()->GetFirstPlayerController();
@@ -27,7 +27,7 @@ void AUIManager::BeginPlay()
 
 }
 
-void  AUIManager::CreateNoteUI(FText noteText, ABaseTerrorConfiguration* CurrentTerror)
+void  AHUDManager::CreateNoteUI(FText noteText, ABaseTerrorConfiguration* CurrentTerror)
 {
     if(CurrentNoteWidget)
     {
@@ -38,7 +38,7 @@ void  AUIManager::CreateNoteUI(FText noteText, ABaseTerrorConfiguration* Current
     
 }
 
-void  AUIManager::ShowPress(bool press)
+void  AHUDManager::ShowPress(bool press)
 {
     if(CurrentPressWidget)
     {
@@ -55,7 +55,7 @@ void  AUIManager::ShowPress(bool press)
     
 }
 
-void  AUIManager::EnableCursor(bool value)
+void  AHUDManager::EnableCursor(bool value)
 {
     if(CurrentPC)
     {
@@ -75,13 +75,13 @@ void  AUIManager::EnableCursor(bool value)
    
 }
 
-void AUIManager::NewNote()
+void AHUDManager::NewNote()
 {
      CurrentNewNoteWidget->SetVisibility(ESlateVisibility::Visible);
      CurrentNewNoteWidget->NewNoteCreated();
-     GetWorld()->GetTimerManager().SetTimer(NewNoteHandle,this,&AUIManager::HideNewNote,6,false);
+     GetWorld()->GetTimerManager().SetTimer(NewNoteHandle,this,&AHUDManager::HideNewNote,6,false);
 }
-void AUIManager::HideNewNote()
+void AHUDManager::HideNewNote()
 {
     CurrentNewNoteWidget->SetVisibility(ESlateVisibility::Hidden);
 }

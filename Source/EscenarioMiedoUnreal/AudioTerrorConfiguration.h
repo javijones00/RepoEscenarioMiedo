@@ -16,15 +16,20 @@ class ESCENARIOMIEDOUNREAL_API AAudioTerrorConfiguration : public ABaseTerrorCon
 
 private:
 
+	UPROPERTY(BlueprintReadOnly,  meta = (AllowPrivateAccess = "true"))
 	bool IsActivated;
 
 	//Sonidos disponibles
+	UPROPERTY(EditAnywhere,Category="Sounds")
+	class UAudioComponent* MyAudioComponent;
 	UPROPERTY(EditAnywhere,Category="Sounds")
 	TArray<class USoundBase*> SceneSounds;
 	UPROPERTY(EditAnywhere,Category="Sounds")
 	class USoundBase* AmbientMusic;
 	UPROPERTY(EditAnywhere,Category="RandomSounds")
 	TArray<AActor*> RandomTargetLocations;
+
+
 
     TMap<FString,USoundBase*> SoundDictionary;
 	float CurrentTimeSound;
@@ -40,8 +45,12 @@ protected:
 
 	virtual void PerformChanges() override;
 
+	virtual void Config(bool Activated) override;
+
 public:
 
+	AAudioTerrorConfiguration();
+	
 	void PlaySound(FString SoundName, FVector location);
 
 	UFUNCTION(BlueprintCallable)

@@ -10,3 +10,9 @@ void APostProcessTerrorConfig::PerformChanges()
     // PostProcessVolume->Settings.vi
 
 }
+void APostProcessTerrorConfig::Config(bool Activated)
+{
+    PostProcessVolume->bEnabled = Activated;
+    // PostProcessVolume->Settings.vi
+
+}

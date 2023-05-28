@@ -23,5 +23,7 @@ protected:
 	TArray<class ALight*> OldSceneLights;
 
 	virtual void PerformChanges() override;
+	
+	virtual void Config(bool Activated) override;
 };
 

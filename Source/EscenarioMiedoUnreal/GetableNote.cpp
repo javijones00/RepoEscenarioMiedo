@@ -2,7 +2,7 @@
 
 
 #include "GetableNote.h"
-#include "UIManager.h"
+#include "HUDManager.h"
 #include "BaseTerrorConfiguration.h"
 
 void AGetableNote::GetableGot()

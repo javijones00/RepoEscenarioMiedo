@@ -26,7 +26,10 @@ private:
 
 
 protected:
+
 	virtual void PerformChanges() override;
+
+	virtual void Config(bool Activated) override;
 
 public:
 	
@@ -34,4 +37,6 @@ public:
 	void MonsterActivated();
 	UFUNCTION(BlueprintImplementableEvent)
 	void MonsterChasing();
+	UFUNCTION(BlueprintImplementableEvent)
+	void MonsterDestroyed();
 };

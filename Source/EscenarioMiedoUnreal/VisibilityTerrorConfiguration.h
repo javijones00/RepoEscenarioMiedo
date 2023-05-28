@@ -24,6 +24,8 @@ protected:
 	class AExponentialHeightFog* ExponentialHeightFog;
 
 	virtual void PerformChanges() override;
+
+	virtual void Config(bool Activated) override;
 };
 	
 

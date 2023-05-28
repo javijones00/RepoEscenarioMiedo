@@ -9,6 +9,7 @@ ABaseTerrorConfiguration::ABaseTerrorConfiguration()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+
 }
 
 void ABaseTerrorConfiguration::BeginPlay()
@@ -25,11 +26,12 @@ void ABaseTerrorConfiguration::Tick(float DeltaTime)
 
 void ABaseTerrorConfiguration::PerformChanges()
 {
-	UE_LOG(LogTemp,Warning,TEXT("Changes performed"));
+	UE_LOG(LogTemp,Warning,TEXT("Perform Changes not implemented."));
 }
 
-void ABaseTerrorConfiguration::Config()
+void ABaseTerrorConfiguration::Config(bool Activated)
 {
-	//Ignorar por ahora
+	UE_LOG(LogTemp,Warning,TEXT("Configure not implemented."));
 }
+
 

@@ -12,6 +12,11 @@ void AVisibilityTerrorConfiguration::PerformChanges()
     ExponentialHeightFog->SetActorHiddenInGame(false);
     PostProcessVolume->Settings.VignetteIntensity= 1.0f;
 
-   UE_LOG(LogTemp, Warning, TEXT("Hello"));
+ 
 
+}
+void AVisibilityTerrorConfiguration::Config(bool Activated)
+{
+    ExponentialHeightFog->SetActorHiddenInGame(!Activated);
+    PostProcessVolume->Settings.VignetteIntensity= Activated? 1.0f : 0.0f;
 }

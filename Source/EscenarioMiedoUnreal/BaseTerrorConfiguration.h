@@ -26,6 +26,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	virtual void PerformChanges();
 
-	virtual void Config();
+	UFUNCTION(BlueprintCallable)
+	virtual void Config(bool Activated);
 
 };

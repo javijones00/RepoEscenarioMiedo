@@ -28,7 +28,7 @@ protected:
 	UStaticMeshComponent* GetableMesh;
 
 	UPROPERTY(EditAnywhere, Category="UIManager", meta = (AllowPrivateAccess = "true"))
-	class AUIManager* UIManager;
+	class AHUDManager* UIManager;
 
 public:	
 	// Called every frame

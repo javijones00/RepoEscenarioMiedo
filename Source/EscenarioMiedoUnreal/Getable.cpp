@@ -4,7 +4,7 @@
 #include "Getable.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
-#include "UIManager.h"
+#include "HUDManager.h"
 
 // Sets default values
 AGetable::AGetable()

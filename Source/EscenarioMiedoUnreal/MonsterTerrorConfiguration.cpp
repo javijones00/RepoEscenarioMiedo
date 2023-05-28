@@ -25,10 +25,29 @@ void AMonsterTerrorConfiguration::StartChasingInvoked()
     if(BlackBoardRef)
     {
         BlackBoardRef->SetValueAsBool(FName("IsChasingMode"),true);
-        UE_LOG(LogTemp, Warning, TEXT("Buleria Buleria"));   
         MonsterChasing();
     }
    
     
     
+}
+void AMonsterTerrorConfiguration::Config(bool Activated)
+{
+    UBlackboardComponent* BlackBoardRef = UAIBlueprintHelperLibrary::GetBlackboard(MonsterReference);
+    if(Activated)
+    {
+        MonsterReference->SetActorHiddenInGame(false);
+        GetWorld()->GetTimerManager().SetTimer(ChasingHandle,this,&AMonsterTerrorConfiguration::StartChasingInvoked,TimeUntilChasing,false);
+        MonsterActivated();
+    }
+    else
+    {
+        MonsterReference->SetActorHiddenInGame(true);
+        GetWorld()->GetTimerManager().ClearTimer(ChasingHandle);
+        BlackBoardRef->SetValueAsBool(FName("IsChasingMode"),false);
+        BlackBoardRef->SetValueAsBool(FName("IsStanding"),false);
+        BlackBoardRef->SetValueAsBool(FName("CharacterInRange"),false);
+        MonsterDestroyed();
+
+    }
 }

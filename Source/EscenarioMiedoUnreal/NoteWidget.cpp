@@ -9,7 +9,7 @@
 #include "Components/PanelWidget.h"
 #include "Components/CanvasPanelSlot.h"
 #include "Blueprint/WidgetTree.h"
-#include "UIManager.h"
+#include "HUDManager.h"
 #include "BaseTerrorConfiguration.h"
 
 
@@ -23,12 +23,12 @@ void UNoteWidget::ConfigureNote(FText NoteText,ABaseTerrorConfiguration* TargetT
     CurrentTerror = TargetTerror;
     
 }
-void UNoteWidget::SetUIManager(AUIManager* CurrentUIManager)
+void UNoteWidget::SetUIManager(AHUDManager* CurrentUIManager)
 {
     UIManager = CurrentUIManager;
 }
 
-AUIManager* UNoteWidget::GetUIManager()
+AHUDManager* UNoteWidget::GetUIManager()
 {
   return UIManager;
 }

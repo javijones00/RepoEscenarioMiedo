@@ -6,6 +6,13 @@
 #include "Sound/SoundBase.h"
 #include "Components/AudioComponent.h"
 
+AAudioTerrorConfiguration::AAudioTerrorConfiguration()
+{
+    MyAudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("MusicAudioComponent"));
+    MyAudioComponent->SetupAttachment(RootComponent);
+
+}
+
 void AAudioTerrorConfiguration::BeginPlay()
 {
     Super::BeginPlay();
@@ -37,8 +44,23 @@ void AAudioTerrorConfiguration::Tick(float DeltaTime)
 void AAudioTerrorConfiguration::PerformChanges()
 {
     IsActivated = true;
-    UGameplayStatics::PlaySound2D(GetWorld(),AmbientMusic);
+    MyAudioComponent->SetSound(AmbientMusic);
+    MyAudioComponent->Play();
     UE_LOG(LogTemp, Warning, TEXT("Performed audio"));
+}
+
+void AAudioTerrorConfiguration::Config(bool Activated)
+{
+    IsActivated = Activated;
+    if(Activated)
+    {
+        MyAudioComponent->SetSound(AmbientMusic);
+        MyAudioComponent->Play();
+    }
+    else
+    {
+        MyAudioComponent->Stop();
+    }
 }
 
 void AAudioTerrorConfiguration::PlaySound(FString SoundName,FVector Location)

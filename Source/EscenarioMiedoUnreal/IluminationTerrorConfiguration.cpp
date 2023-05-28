@@ -19,3 +19,14 @@
 
     
 }
+void AIluminationTerrorConfiguration::Config(bool Activated)
+{
+     for(int i = 0; i<NewSceneLights.Num();i++)
+    {
+        NewSceneLights[i]->SetActorHiddenInGame(!Activated);
+    }
+     for(int i = 0; i<OldSceneLights.Num();i++)
+    {
+        OldSceneLights[i]->SetActorHiddenInGame(Activated);
+    }
+}

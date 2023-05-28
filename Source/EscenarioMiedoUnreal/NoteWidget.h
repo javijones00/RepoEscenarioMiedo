@@ -22,7 +22,7 @@ protected:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="Widgets", meta = (AllowPrivateAccess = "true"))
 	class UTextBlock* NoteTextBlock;
 	UPROPERTY(BlueprintReadOnly, Category="Widgets", meta = (AllowPrivateAccess = "true"))
-	class AUIManager* UIManager;
+	class AHUDManager* UIManager;
 
 	class UPanelWidget* RootPanel;
 	//UPROPERTY(BlueprintReadOnly, Category="Terror Configuration", meta = (AllowPrivateAccess = "true"))
@@ -32,11 +32,11 @@ public:
 
 	void ConfigureNote(FText NoteText, class ABaseTerrorConfiguration* TargetTerror);
 	
-	void SetUIManager(class AUIManager* CurrentUIManager);
+	void SetUIManager(class AHUDManager* CurrentUIManager);
 	
 	UFUNCTION(BlueprintCallable)
 	class ABaseTerrorConfiguration* GetCurrentTerror();
 
 	UFUNCTION(BlueprintCallable)
-	class AUIManager* GetUIManager();
+	class AHUDManager* GetUIManager();
 };
