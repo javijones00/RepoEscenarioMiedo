@@ -21,6 +21,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	class APostProcessVolume* PostProcessVolume;
 
+public:
 
 	virtual void PerformChanges() override;
 

@@ -21,12 +21,26 @@ protected:
 	TSubclassOf<class UNoteWidget> MyNoteWidget;
 	UPROPERTY(EditAnywhere, Category="Widgets", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class UUserWidget> PressWidget;
-		UPROPERTY(EditAnywhere, Category="Widgets", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, Category="Widgets", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class UNewNoteWidget> NewNoteWidget;
+	UPROPERTY(EditAnywhere, Category="Widgets", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class USandboxOptions> SandboxWidget;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="Configurations", meta = (AllowPrivateAccess = "true"))
+	class AAudioTerrorConfiguration* AudioConfig;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="Configurations", meta = (AllowPrivateAccess = "true"))
+	class AIluminationTerrorConfiguration* IlumConfig;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="Configurations", meta = (AllowPrivateAccess = "true"))
+	class APostProcessTerrorConfig* PPConfig;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="Configurations", meta = (AllowPrivateAccess = "true"))
+	class AVisibilityTerrorConfiguration* VisibilityConfig;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="Configurations", meta = (AllowPrivateAccess = "true"))
+	class AMonsterTerrorConfiguration* MonsterConfig;
 
 	class UNewNoteWidget* CurrentNewNoteWidget;
 	class UNoteWidget* CurrentNoteWidget;
 	class UUserWidget* CurrentPressWidget;
+	class USandboxOptions* CurrentSandbox;
 	class APlayerController* CurrentPC;
 
 	virtual void BeginPlay() override;
@@ -41,6 +55,8 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void NewNote();
+	UFUNCTION(BlueprintCallable)
+	void ShowSandBox(bool value);
 
 	void HideNewNote();
 

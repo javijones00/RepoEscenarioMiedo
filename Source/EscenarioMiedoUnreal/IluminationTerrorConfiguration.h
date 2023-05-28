@@ -21,9 +21,10 @@ protected:
 	TArray<class ALight*> NewSceneLights;
 	UPROPERTY(EditAnywhere)
 	TArray<class ALight*> OldSceneLights;
-
-	virtual void PerformChanges() override;
 	
+public:
+	virtual void PerformChanges() override;
+
 	virtual void Config(bool Activated) override;
 };
 

@@ -22,6 +22,8 @@ protected:
 
 	UPROPERTY(EditAnywhere)
 	class AExponentialHeightFog* ExponentialHeightFog;
+	
+public:
 
 	virtual void PerformChanges() override;
 

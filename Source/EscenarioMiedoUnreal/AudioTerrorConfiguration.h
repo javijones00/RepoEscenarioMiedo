@@ -43,14 +43,14 @@ protected:
 
 	virtual void BeginPlay() override;
 
+public:
+
 	virtual void PerformChanges() override;
 
 	virtual void Config(bool Activated) override;
 
-public:
-
 	AAudioTerrorConfiguration();
-	
+
 	void PlaySound(FString SoundName, FVector location);
 
 	UFUNCTION(BlueprintCallable)

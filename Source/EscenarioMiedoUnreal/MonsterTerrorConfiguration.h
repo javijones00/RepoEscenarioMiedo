@@ -24,15 +24,11 @@ private:
 
 	void StartChasingInvoked();
 
-
-protected:
-
+public:
 	virtual void PerformChanges() override;
 
 	virtual void Config(bool Activated) override;
 
-public:
-	
 	UFUNCTION(BlueprintImplementableEvent)
 	void MonsterActivated();
 	UFUNCTION(BlueprintImplementableEvent)

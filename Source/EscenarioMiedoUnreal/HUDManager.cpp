@@ -6,6 +6,13 @@
 #include "Blueprint/UserWidget.h"
 #include "BaseTerrorConfiguration.h"
 #include "NewNoteWidget.h"
+#include "SandboxOptions.h"
+#include "AudioTerrorConfiguration.h"
+#include "IluminationTerrorConfiguration.h"
+#include "MonsterTerrorConfiguration.h"
+#include "VisibilityTerrorConfiguration.h"
+#include "PostProcessTerrorConfig.h"
+#include "Blueprint/UserWidget.h"
 
 void AHUDManager::BeginPlay()
 {
@@ -24,6 +31,13 @@ void AHUDManager::BeginPlay()
     CurrentPressWidget = CreateWidget<UUserWidget>(GetWorld(),PressWidget,TEXT("Press"));
 	CurrentPressWidget->AddToViewport();
 	CurrentPressWidget->SetVisibility(ESlateVisibility::Hidden);
+
+    CurrentSandbox = CreateWidget<USandboxOptions>(GetWorld(),SandboxWidget,TEXT("SandboxOptions"));
+    // CurrentSandbox->AddToViewport();
+    // CurrentSandbox->SetVisibility(ESlateVisibility::Hidden); 
+    CurrentSandbox->SetConfigurations(AudioConfig,IlumConfig,PPConfig,VisibilityConfig,MonsterConfig);
+
+    
 
 }
 
@@ -80,6 +94,19 @@ void AHUDManager::NewNote()
      CurrentNewNoteWidget->SetVisibility(ESlateVisibility::Visible);
      CurrentNewNoteWidget->NewNoteCreated();
      GetWorld()->GetTimerManager().SetTimer(NewNoteHandle,this,&AHUDManager::HideNewNote,6,false);
+}
+void AHUDManager::ShowSandBox(bool value)
+{
+
+	// CurrentSandbox->SetVisibility(value ? ESlateVisibility::Visible : ESlateVisibility::Hidden);  
+    if(value)
+    {
+        CurrentSandbox->AddToViewport(2);
+    }
+    else
+    {
+        CurrentSandbox->RemoveFromParent();
+    }
 }
 void AHUDManager::HideNewNote()
 {

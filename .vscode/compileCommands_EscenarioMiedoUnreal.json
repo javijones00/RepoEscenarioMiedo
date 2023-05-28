@@ -88,6 +88,22 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
+		"file": "C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\Source\\EscenarioMiedoUnreal\\HUDManager.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+			"@C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\.vscode\\compileCommands_EscenarioMiedoUnreal\\EscenarioMiedoUnreal.292.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\Source\\EscenarioMiedoUnreal\\HUDManager.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+			"@C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\.vscode\\compileCommands_EscenarioMiedoUnreal\\EscenarioMiedoUnreal.292.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\Source\\EscenarioMiedoUnreal\\IluminationTerrorConfiguration.cpp",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
@@ -184,6 +200,22 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
+		"file": "C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\Source\\EscenarioMiedoUnreal\\SandboxOptions.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+			"@C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\.vscode\\compileCommands_EscenarioMiedoUnreal\\EscenarioMiedoUnreal.292.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\Source\\EscenarioMiedoUnreal\\SandboxOptions.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
+			"@C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\.vscode\\compileCommands_EscenarioMiedoUnreal\\EscenarioMiedoUnreal.292.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\Source\\EscenarioMiedoUnreal\\ScenarioTerrorConfig.cpp",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
@@ -193,22 +225,6 @@
 	},
 	{
 		"file": "C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\Source\\EscenarioMiedoUnreal\\ScenarioTerrorConfig.h",
-		"arguments": [
-			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
-			"@C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\.vscode\\compileCommands_EscenarioMiedoUnreal\\EscenarioMiedoUnreal.292.rsp"
-		],
-		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
-	},
-	{
-		"file": "C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\Source\\EscenarioMiedoUnreal\\UIManager.cpp",
-		"arguments": [
-			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
-			"@C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\.vscode\\compileCommands_EscenarioMiedoUnreal\\EscenarioMiedoUnreal.292.rsp"
-		],
-		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
-	},
-	{
-		"file": "C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\Source\\EscenarioMiedoUnreal\\UIManager.h",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe",
 			"@C:\\Users\\javip\\OneDrive\\Escritorio\\Universidad\\TFG - Videojuegos\\RepoEscenarioMiedo\\RepoEscenarioMiedo\\.vscode\\compileCommands_EscenarioMiedoUnreal\\EscenarioMiedoUnreal.292.rsp"
