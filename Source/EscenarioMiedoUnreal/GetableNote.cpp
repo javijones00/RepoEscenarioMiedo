@@ -9,7 +9,9 @@ void AGetableNote::GetableGot()
 {
     if(UIManager)
     {
-        UIManager->CreateNoteUI(NoteText, SpecificTerrorConfig,NextNote,NoteSound);
+        NoteText = NoteText.Replace(TEXT("\\n"),TEXT("\n"));
+        FText ConvertedText = FText::FromString(NoteText);
+        UIManager->CreateNoteUI(ConvertedText, SpecificTerrorConfig,NextNote,NoteSound);
     }
     // if(SpecificTerrorConfig)
     // {

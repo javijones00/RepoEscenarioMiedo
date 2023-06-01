@@ -22,7 +22,7 @@ public:
 protected:
 
 	UPROPERTY(EditAnywhere, Category="Note Specification", meta = (AllowPrivateAccess = "true"))
-	FText NoteText;
+	FString NoteText;
 	UPROPERTY(EditAnywhere, Category="Note Specification", meta = (AllowPrivateAccess = "true"))
 	class ABaseTerrorConfiguration* SpecificTerrorConfig;
 	UPROPERTY(EditAnywhere, Category="Note Specification", meta = (AllowPrivateAccess = "true"))
