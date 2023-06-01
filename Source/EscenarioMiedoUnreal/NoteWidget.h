@@ -27,10 +27,12 @@ protected:
 	class UPanelWidget* RootPanel;
 	//UPROPERTY(BlueprintReadOnly, Category="Terror Configuration", meta = (AllowPrivateAccess = "true"))
 	class ABaseTerrorConfiguration* CurrentTerror;
+	class AGetableNote* FollowingNote;
+	class UAudioComponent* NoteFX;
 
 public:
 
-	void ConfigureNote(FText NoteText, class ABaseTerrorConfiguration* TargetTerror);
+	void ConfigureNote(FText NoteText, class ABaseTerrorConfiguration* TargetTerror, class AGetableNote* NextNote, class UAudioComponent* NoteSound);
 	
 	void SetUIManager(class AHUDManager* CurrentUIManager);
 	
@@ -39,4 +41,10 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	class AHUDManager* GetUIManager();
+
+	UFUNCTION(BlueprintCallable)
+	class AGetableNote* GetNextNote();
+
+	UFUNCTION(BlueprintCallable)
+	class UAudioComponent* GetNoteSound();
 };

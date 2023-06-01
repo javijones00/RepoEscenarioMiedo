@@ -9,7 +9,7 @@ void AGetableNote::GetableGot()
 {
     if(UIManager)
     {
-        UIManager->CreateNoteUI(NoteText, SpecificTerrorConfig);
+        UIManager->CreateNoteUI(NoteText, SpecificTerrorConfig,NextNote,NoteSound);
     }
     // if(SpecificTerrorConfig)
     // {

@@ -50,7 +50,7 @@ protected:
 
 public:
 
-	void CreateNoteUI(FText noteText,  class ABaseTerrorConfiguration* CurrentTerror);
+	void CreateNoteUI(FText noteText,  class ABaseTerrorConfiguration* CurrentTerror, class AGetableNote* NextNote, class UAudioComponent* NoteSound);
 
 	void ShowPress(bool value);
 

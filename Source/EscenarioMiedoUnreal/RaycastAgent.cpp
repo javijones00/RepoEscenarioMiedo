@@ -65,7 +65,7 @@ bool URaycastAgent::GetAvailableGetable()
 	
 	if(success)
 	{
-		if(HitResult.GetActor()->GetClass()->IsChildOf<AGetable>())
+		if(HitResult.GetActor()->GetClass()->IsChildOf<AGetable>() && !HitResult.GetActor()->IsHidden())
 		{
 			CurrentGetable = Cast<AGetable>(HitResult.GetActor());
 			return true;

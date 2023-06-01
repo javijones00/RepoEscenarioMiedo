@@ -25,6 +25,10 @@ protected:
 	FText NoteText;
 	UPROPERTY(EditAnywhere, Category="Note Specification", meta = (AllowPrivateAccess = "true"))
 	class ABaseTerrorConfiguration* SpecificTerrorConfig;
+	UPROPERTY(EditAnywhere, Category="Note Specification", meta = (AllowPrivateAccess = "true"))
+	class AGetableNote* NextNote;
+	UPROPERTY(EditAnywhere,Category="Note Specification", meta = (AllowPrivateAccess = "true"))
+	class UAudioComponent* NoteSound;
 
 	
 };

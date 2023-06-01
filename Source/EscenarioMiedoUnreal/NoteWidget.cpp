@@ -14,13 +14,15 @@
 
 
 
-void UNoteWidget::ConfigureNote(FText NoteText,ABaseTerrorConfiguration* TargetTerror)
+void UNoteWidget::ConfigureNote(FText NoteText,ABaseTerrorConfiguration* TargetTerror, AGetableNote* NextNote, UAudioComponent* NoteSound)
 {
     if(NoteTextBlock)
     {
         NoteTextBlock->SetText(NoteText);
     }
     CurrentTerror = TargetTerror;
+    FollowingNote= NextNote;
+    NoteFX=NoteSound;
     
 }
 void UNoteWidget::SetUIManager(AHUDManager* CurrentUIManager)
@@ -38,3 +40,16 @@ ABaseTerrorConfiguration*  UNoteWidget::GetCurrentTerror()
 {
     return CurrentTerror;
 }
+
+AGetableNote* UNoteWidget::GetNextNote()
+{
+    return FollowingNote;
+}
+
+UAudioComponent* UNoteWidget::GetNoteSound()
+{
+    return NoteFX;
+}
+
+
+

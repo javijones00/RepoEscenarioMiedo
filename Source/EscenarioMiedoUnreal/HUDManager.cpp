@@ -42,11 +42,11 @@ void AHUDManager::BeginPlay()
 
 }
 
-void  AHUDManager::CreateNoteUI(FText noteText, ABaseTerrorConfiguration* CurrentTerror)
+void  AHUDManager::CreateNoteUI(FText noteText, ABaseTerrorConfiguration* CurrentTerror, AGetableNote* NextNote, UAudioComponent* NoteSound)
 {
     if(CurrentNoteWidget)
     {
-        CurrentNoteWidget->ConfigureNote(noteText,CurrentTerror);
+        CurrentNoteWidget->ConfigureNote(noteText,CurrentTerror,NextNote,NoteSound);
         CurrentNoteWidget->SetVisibility(ESlateVisibility::Visible);
         EnableCursor(true);
     }
